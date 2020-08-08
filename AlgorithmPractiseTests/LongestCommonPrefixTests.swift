@@ -49,6 +49,10 @@ class LongestCommonPrefixTests: XCTestCase {
         expect(input: [], output: "")
     }
 
+    func test_listWithAnEmptyString() {
+        expect(input: [""], output: "")
+    }
+
     func test_listWithOneItemWithOneLetter() {
         expect(input: ["a"], output: "a")
     }
