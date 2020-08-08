@@ -106,7 +106,6 @@ class LongestCommonPrefixTests: XCTestCase {
     // MARK: - Helpers
 
     private func expect(input: [String], output: String, file: StaticString = #file, line: UInt = #line) {
-        let result = input.longestCommonPrefix()
-        XCTAssertEqual(result, output, file: file, line: line)
+        XCTAssertEqual(input.longestCommonPrefix(), output, file: file, line: line)
     }
 }
