@@ -87,6 +87,12 @@ class LongestCommonPrefixTests: XCTestCase {
         expect(input: ["aab", "aac"], output: "aa")
     }
 
+    func test_listWithMoreThanTwoItemsAndAMultipleLettersCommonPrefix() {
+        expect(input: ["aaa", "aac", "aab", "aac", "aab"], output: "aa")
+        expect(input: ["artuuus", "artuuus", "artuuus", "aituuus"], output: "a")
+        expect(input: ["abcd", "abcde", "abcdefg"], output: "abcd")
+    }
+
     // MARK: - Helpers
 
     private func expect(input: [String], output: String, file: StaticString = #file, line: UInt = #line) {
