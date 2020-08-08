@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import AlgorithmPractise
 
 class LongestCommonPrefixTests: XCTestCase {
 

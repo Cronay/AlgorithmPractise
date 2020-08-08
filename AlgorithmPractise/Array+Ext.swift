@@ -9,7 +9,7 @@
 extension Array where Element == String {
 
     /// If the list of strings is empty return a empty string otherwise return the longest common prefix of all elements.
-    func longestCommonPrefix() -> String {
+    public func longestCommonPrefix() -> String {
         if self.isEmpty {
             return ""
         }
