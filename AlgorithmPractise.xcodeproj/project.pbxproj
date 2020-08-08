@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F3A56C524DEAA2100F984EC /* AlgorithmPractise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3A56BB24DEAA2000F984EC /* AlgorithmPractise.framework */; };
-		6F3A56CA24DEAA2100F984EC /* AlgorithmPractiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A56C924DEAA2100F984EC /* AlgorithmPractiseTests.swift */; };
-		6F3A56CC24DEAA2100F984EC /* AlgorithmPractise.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3A56BE24DEAA2000F984EC /* AlgorithmPractise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F3A56D624DEAB1D00F984EC /* LongestCommonPrefixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A56D524DEAB1D00F984EC /* LongestCommonPrefixTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +23,10 @@
 
 /* Begin PBXFileReference section */
 		6F3A56BB24DEAA2000F984EC /* AlgorithmPractise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlgorithmPractise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F3A56BE24DEAA2000F984EC /* AlgorithmPractise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlgorithmPractise.h; sourceTree = "<group>"; };
 		6F3A56BF24DEAA2000F984EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F3A56C424DEAA2100F984EC /* AlgorithmPractiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmPractiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F3A56C924DEAA2100F984EC /* AlgorithmPractiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmPractiseTests.swift; sourceTree = "<group>"; };
 		6F3A56CB24DEAA2100F984EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F3A56D524DEAB1D00F984EC /* LongestCommonPrefixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongestCommonPrefixTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +69,6 @@
 		6F3A56BD24DEAA2000F984EC /* AlgorithmPractise */ = {
 			isa = PBXGroup;
 			children = (
-				6F3A56BE24DEAA2000F984EC /* AlgorithmPractise.h */,
 				6F3A56BF24DEAA2000F984EC /* Info.plist */,
 			);
 			path = AlgorithmPractise;
@@ -80,8 +77,8 @@
 		6F3A56C824DEAA2100F984EC /* AlgorithmPractiseTests */ = {
 			isa = PBXGroup;
 			children = (
-				6F3A56C924DEAA2100F984EC /* AlgorithmPractiseTests.swift */,
 				6F3A56CB24DEAA2100F984EC /* Info.plist */,
+				6F3A56D524DEAB1D00F984EC /* LongestCommonPrefixTests.swift */,
 			);
 			path = AlgorithmPractiseTests;
 			sourceTree = "<group>";
@@ -93,7 +90,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F3A56CC24DEAA2100F984EC /* AlgorithmPractise.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +147,7 @@
 					};
 					6F3A56C324DEAA2100F984EC = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -202,7 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F3A56CA24DEAA2100F984EC /* AlgorithmPractiseTests.swift in Sources */,
+				6F3A56D624DEAB1D00F984EC /* LongestCommonPrefixTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +384,7 @@
 		6F3A56D324DEAA2100F984EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L3YMK7ENYC;
@@ -398,6 +396,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.yannic-borgfeld.AlgorithmPractiseTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -405,6 +404,7 @@
 		6F3A56D424DEAA2100F984EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L3YMK7ENYC;
