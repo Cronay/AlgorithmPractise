@@ -10,8 +10,8 @@ extension Array where Element == String {
 
     /// If the list of strings is empty return a empty string otherwise return the longest common prefix of all elements.
     public func longestCommonPrefix() -> String {
-        guard !self.isEmpty else { return "" }
-        guard !(self.count == 1) else { return self[0] }
+        if self.isEmpty { return "" }
+        if self.count == 1 { return self[0] }
 
         return findCommonPrefixForAllElements()
     }
