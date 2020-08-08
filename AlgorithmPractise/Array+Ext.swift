@@ -14,7 +14,7 @@ extension Array where Element == String {
             return ""
         }
         if self.count == 1 {
-            return self.first!
+            return self[0]
         }
 
         return findCommonPrefixForAllElements()
