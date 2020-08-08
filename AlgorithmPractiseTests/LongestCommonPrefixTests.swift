@@ -38,13 +38,23 @@ extension Array where Element == String {
     }
 
     private func findPrefixOfAllElements() -> String {
-        let currentPrefix = self[0].prefix(1)
+        var currentPrefix = self[0].prefix(self[0].count)
         for item in self {
-            if item.prefix(1) != currentPrefix {
-                return ""
+            let itemsPrefix = item.prefix(currentPrefix.count)
+            if itemsPrefix != currentPrefix {
+                currentPrefix = findCommonPrefix(String(itemsPrefix), String(currentPrefix))
             }
         }
         return String(currentPrefix)
+    }
+
+    private func findCommonPrefix(_ first: String, _ second: String) -> Substring {
+        for i in (0...first.count).reversed() {
+            if first.prefix(i) == second.prefix(i) {
+                return first.prefix(i)
+            }
+        }
+        return ""
     }
 }
 
@@ -86,6 +96,10 @@ class LongestCommonPrefixTests: XCTestCase {
 
     func test_listWithMultipleItemsWithASingleLetterCommonPrefix() {
         expect(input: ["ab", "ac", "ab", "ad", "ae"], output: "a")
+    }
+
+    func test_listWithTwoItemsAndAMultipleLettersCommonPrefix() {
+        expect(input: ["aab", "aac"], output: "aa")
     }
 
     // MARK: - Helpers
