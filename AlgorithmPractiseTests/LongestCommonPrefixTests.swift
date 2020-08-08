@@ -10,7 +10,7 @@ import XCTest
 
 extension Array where Element == String {
 
-    /// If the list of strings is empty return a empty string.
+    /// If the list of strings is empty return a empty string otherwise return the longest common prefix of all elements.
     func longestCommonPrefix() -> String {
         if self.isEmpty {
             return ""
@@ -21,7 +21,8 @@ extension Array where Element == String {
         if areAllElementsEqual() {
             return self[0]
         }
-        return ""
+
+        return findPrefixOfAllElements()
     }
 
     private func areAllElementsEqual() -> Bool {
@@ -34,6 +35,16 @@ extension Array where Element == String {
         }
 
         return true
+    }
+
+    private func findPrefixOfAllElements() -> String {
+        let currentPrefix = self[0].prefix(1)
+        for item in self {
+            if item.prefix(1) != currentPrefix {
+                return ""
+            }
+        }
+        return String(currentPrefix)
     }
 }
 
@@ -67,6 +78,10 @@ class LongestCommonPrefixTests: XCTestCase {
         expect(input: ["a", "a", "b"], output: "")
         expect(input: ["a", "b", "a"], output: "")
         expect(input: ["b", "a", "a"], output: "")
+    }
+
+    func test_listWithTwoItemsWithACommonPrefix() {
+        expect(input: ["ab", "ac"], output: "a")
     }
 
     // MARK: - Helpers
