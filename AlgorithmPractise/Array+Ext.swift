@@ -22,7 +22,7 @@ extension Array where Element == String {
 
     private func findCommonPrefix(_ first: String, _ second: String) -> String {
         for i in (0...first.count).reversed() {
-            if first.prefix(i) == second.prefix(i) {
+            if first.hasPrefix(second.prefix(i)) {
                 return String(first.prefix(i))
             }
         }
