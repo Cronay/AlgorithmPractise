@@ -13,27 +13,17 @@ extension Array where Element == String {
         if self.isEmpty { return "" }
         if self.count == 1 { return self[0] }
 
-        return findCommonPrefixForAllElements()
+        let sorted = self.sorted()
+        let first = sorted[0]
+        let last = sorted[sorted.count - 1]
+
+        return findCommonPrefix(first, last)
     }
 
-    private func findCommonPrefixForAllElements() -> String {
-        var currentPrefix = self[0].prefix(self[0].count)
-        for item in self {
-            let itemsPrefix = item.prefix(currentPrefix.count)
-            if itemsPrefix != currentPrefix {
-                currentPrefix = findCommonPrefix(String(itemsPrefix), String(currentPrefix))
-            }
-            if currentPrefix.isEmpty {
-                return String(currentPrefix)
-            }
-        }
-        return String(currentPrefix)
-    }
-
-    private func findCommonPrefix(_ first: String, _ second: String) -> Substring {
+    private func findCommonPrefix(_ first: String, _ second: String) -> String {
         for i in (0...first.count).reversed() {
             if first.prefix(i) == second.prefix(i) {
-                return first.prefix(i)
+                return String(first.prefix(i))
             }
         }
         return ""
