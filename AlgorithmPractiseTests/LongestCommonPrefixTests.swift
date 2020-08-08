@@ -15,23 +15,11 @@ extension Array where Element == String {
         if self.isEmpty {
             return ""
         }
-        if self.count == 1 || areAllElementsEqual() {
+        if self.count == 1 {
             return self.first!
         }
 
         return findPrefixOfAllElements()
-    }
-
-    private func areAllElementsEqual() -> Bool {
-        let firstItem = self[0]
-
-        for item in self {
-            if item != firstItem {
-                return false
-            }
-        }
-
-        return true
     }
 
     private func findPrefixOfAllElements() -> String {
