@@ -30,12 +30,12 @@ class LongestCommonPrefixTests: XCTestCase {
     }
 
     func test_listWithOneItem() {
-        let list = ["abc"]
-        expect(list: list, expectedResult: "abc")
+        let list = ["a"]
+        expect(list: list, expectedResult: "a")
     }
 
     func test_listWithTwoDifferentItemsWithoutCommonPrefix() {
-        let list = ["abc", "cba"]
+        let list = ["a", "c"]
         expect(list: list, expectedResult: "")
     }
 
