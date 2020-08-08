@@ -29,9 +29,14 @@ class LongestCommonPrefixTests: XCTestCase {
         expect(list: list, expectedResult: "")
     }
 
-    func test_listWithOneItem() {
+    func test_listWithOneItemWithOneLetter() {
         let list = ["a"]
         expect(list: list, expectedResult: "a")
+    }
+
+    func test_listWithOneItemWithMoreThanOneLetter() {
+        let list = ["abc"]
+        expect(list: list, expectedResult: "abc")
     }
 
     func test_listWithTwoDifferentItemsWithoutCommonPrefix() {
@@ -41,8 +46,8 @@ class LongestCommonPrefixTests: XCTestCase {
 
     // MARK: - Helpers
 
-    private func expect(list: [String], expectedResult: String) {
+    private func expect(list: [String], expectedResult: String, file: StaticString = #file, line: UInt = #line) {
         let result = list.longestCommonPrefix()
-        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(result, expectedResult, file: file, line: line)
     }
 }
