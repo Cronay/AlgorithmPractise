@@ -17,10 +17,10 @@ extension Array where Element == String {
             return self.first!
         }
 
-        return findPrefixOfAllElements()
+        return findCommonPrefixForAllElements()
     }
 
-    private func findPrefixOfAllElements() -> String {
+    private func findCommonPrefixForAllElements() -> String {
         var currentPrefix = self[0].prefix(self[0].count)
         for item in self {
             let itemsPrefix = item.prefix(currentPrefix.count)
