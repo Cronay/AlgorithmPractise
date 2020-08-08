@@ -65,6 +65,8 @@ class LongestCommonPrefixTests: XCTestCase {
 
     func test_listWithTwoEqualAndOneMoreItem() {
         expect (input: ["a", "a", "b"], output: "")
+        expect (input: ["a", "b", "a"], output: "")
+        expect (input: ["b", "a", "a"], output: "")
     }
 
     // MARK: - Helpers
