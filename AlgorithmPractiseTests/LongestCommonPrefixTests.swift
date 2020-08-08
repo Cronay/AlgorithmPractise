@@ -18,10 +18,22 @@ extension Array where Element == String {
         if self.count == 1 {
             return self.first!
         }
-        if self[0] == self[1] {
+        if areAllElementsEqual() {
             return self[0]
         }
         return ""
+    }
+
+    private func areAllElementsEqual() -> Bool {
+        let firstItem = self[0]
+
+        for item in self {
+            if item != firstItem {
+                return false
+            }
+        }
+
+        return true
     }
 }
 
@@ -49,6 +61,10 @@ class LongestCommonPrefixTests: XCTestCase {
 
     func test_listWithTwoEqualItemsWithMoreThanOneLetter() {
         expect(input: ["abc", "abc"], output: "abc")
+    }
+
+    func test_listWithTwoEqualAndOneMoreItem() {
+        expect (input: ["a", "a", "b"], output: "")
     }
 
     // MARK: - Helpers
