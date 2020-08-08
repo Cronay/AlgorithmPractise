@@ -49,7 +49,7 @@ class LongestCommonPrefixTests: XCTestCase {
         expect(input: [], output: "")
     }
 
-    func test_listWithAnEmptyString() {
+    func test_listWithEmptyString() {
         expect(input: [""], output: "")
     }
 
@@ -59,6 +59,12 @@ class LongestCommonPrefixTests: XCTestCase {
 
     func test_listWithOneItemWithMoreThanOneLetter() {
         expect(input: ["abc"], output: "abc")
+    }
+
+    func test_listWithEmptyStringAndNonEmptyString() {
+        expect(input: ["", "a"], output: "")
+        expect(input: ["a", ""], output: "")
+        expect(input: ["a", "", "a"], output: "")
     }
 
     func test_listWithTwoDifferentItemsWithoutCommonPrefix() {
