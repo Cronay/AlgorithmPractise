@@ -12,7 +12,10 @@ extension Array where Element == String {
 
     /// If the list of strings is empty return a empty string.
     func longestCommonPrefix() -> String {
-        return ""
+        if self.isEmpty {
+            return ""
+        }
+        return self.first!
     }
 }
 
@@ -24,6 +27,14 @@ class LongestCommonPrefixTests: XCTestCase {
         let result = list.longestCommonPrefix()
 
         XCTAssertEqual(result, "")
+    }
+
+    func test_listWithOneItem() {
+        let list = ["abc"]
+
+        let result = list.longestCommonPrefix()
+
+        XCTAssertEqual(result, "abc")
     }
 
 }
