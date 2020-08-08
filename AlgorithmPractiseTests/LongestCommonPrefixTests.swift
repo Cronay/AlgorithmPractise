@@ -15,7 +15,10 @@ extension Array where Element == String {
         if self.isEmpty {
             return ""
         }
-        return self.first!
+        if self.count == 1 {
+            return self.first!
+        }
+        return ""
     }
 }
 
@@ -23,18 +26,23 @@ class LongestCommonPrefixTests: XCTestCase {
 
     func test_emptyList() {
         let list = [String]()
-
-        let result = list.longestCommonPrefix()
-
-        XCTAssertEqual(result, "")
+        expect(list: list, expectedResult: "")
     }
 
     func test_listWithOneItem() {
         let list = ["abc"]
-
-        let result = list.longestCommonPrefix()
-
-        XCTAssertEqual(result, "abc")
+        expect(list: list, expectedResult: "abc")
     }
 
+    func test_listWithTwoDifferentItemsWithoutCommonPrefix() {
+        let list = ["abc", "cba"]
+        expect(list: list, expectedResult: "")
+    }
+
+    // MARK: - Helpers
+
+    private func expect(list: [String], expectedResult: String) {
+        let result = list.longestCommonPrefix()
+        XCTAssertEqual(result, expectedResult)
+    }
 }
