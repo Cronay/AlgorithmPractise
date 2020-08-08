@@ -28,39 +28,33 @@ extension Array where Element == String {
 class LongestCommonPrefixTests: XCTestCase {
 
     func test_emptyList() {
-        let list = [String]()
-        expect(list: list, expectedResult: "")
+        expect(input: [], output: "")
     }
 
     func test_listWithOneItemWithOneLetter() {
-        let list = ["a"]
-        expect(list: list, expectedResult: "a")
+        expect(input: ["a"], output: "a")
     }
 
     func test_listWithOneItemWithMoreThanOneLetter() {
-        let list = ["abc"]
-        expect(list: list, expectedResult: "abc")
+        expect(input: ["abc"], output: "abc")
     }
 
     func test_listWithTwoDifferentItemsWithoutCommonPrefix() {
-        let list = ["a", "c"]
-        expect(list: list, expectedResult: "")
+        expect(input: ["a", "c"], output: "")
     }
 
     func test_listWithTwoEqualItemsWithOneLetter() {
-        let list = ["a", "a"]
-        expect(list: list, expectedResult: "a")
+        expect(input: ["a", "a"], output: "a")
     }
 
     func test_listWithTwoEqualItemsWithMoreThanOneLetter() {
-        let list = ["abc", "abc"]
-        expect(list: list, expectedResult: "abc")
+        expect(input: ["abc", "abc"], output: "abc")
     }
 
     // MARK: - Helpers
 
-    private func expect(list: [String], expectedResult: String, file: StaticString = #file, line: UInt = #line) {
-        let result = list.longestCommonPrefix()
-        XCTAssertEqual(result, expectedResult, file: file, line: line)
+    private func expect(input: [String], output: String, file: StaticString = #file, line: UInt = #line) {
+        let result = input.longestCommonPrefix()
+        XCTAssertEqual(result, output, file: file, line: line)
     }
 }
