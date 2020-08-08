@@ -27,6 +27,9 @@ extension Array where Element == String {
             if itemsPrefix != currentPrefix {
                 currentPrefix = findCommonPrefix(String(itemsPrefix), String(currentPrefix))
             }
+            if currentPrefix.isEmpty {
+                return String(currentPrefix)
+            }
         }
         return String(currentPrefix)
     }
