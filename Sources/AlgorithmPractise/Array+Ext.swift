@@ -1,9 +1,6 @@
 //
 //  Array+Ext.swift
-//  AlgorithmPractise
-//
-//  Created by Cronay on 08.08.20.
-//  Copyright © 2020 Yannic Borgfeld. All rights reserved.
+//  Created by Cronay on 10.08.20.
 //
 
 extension Array where Element == String {
