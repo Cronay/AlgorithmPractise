@@ -65,7 +65,7 @@ class LongestCommonPrefixTests: XCTestCase {
         expect(input: ["artuuus", "artuuus", "artuuus", "aituuus"], output: "a")
         expect(input: ["abcd", "abcde", "abcdefg"], output: "abcd")
         expect(input: ["abz", "aba", "abn"], output: "ab")
-        expect(input: ["abzgsdtsfd", "abaaa", "abnwttt", "abttww"], output: "ab")
+        expect(input: ["abzgsdtsfd", "abaaa", "abnwttt", "abttww"], output: "aba")
     }
 
     // MARK: - Helpers
