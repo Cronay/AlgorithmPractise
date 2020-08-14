@@ -13,7 +13,11 @@ extension String {
         if self.count == 1 {
             return false
         }
-        return true
+        if self.contains("()") {
+            let newString = self.replacingOccurrences(of: "()", with: "")
+            return newString.hasValidParenthesis()
+        }
+        return false
     }
 }
 
@@ -30,6 +34,10 @@ class ValidParenthesesTests: XCTestCase {
 
     func test_OpeningAndClosingParenthesis_isValid() {
         expect("()", toBeValid: true)
+    }
+
+    func test_ClosingAndOpeningParenthesis_isNotValid() {
+        expect(")(", toBeValid: false)
     }
 
     // MARK: - Helpers
