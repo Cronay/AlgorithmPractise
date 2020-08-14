@@ -23,8 +23,9 @@ class ValidParenthesesTests: XCTestCase {
         expect("", toBeValid: true)
     }
 
-    func test_singleOpeningParenthesis_isNotValid() {
+    func test_singleParenthesis_isNotValid() {
         expect("(", toBeValid: false)
+        expect(")", toBeValid: false)
     }
 
     // MARK: - Helpers
