@@ -13,7 +13,7 @@ extension String {
         if self.count == 1 {
             return false
         }
-        fatalError()
+        return true
     }
 }
 
@@ -26,6 +26,10 @@ class ValidParenthesesTests: XCTestCase {
     func test_singleParenthesis_isNotValid() {
         expect("(", toBeValid: false)
         expect(")", toBeValid: false)
+    }
+
+    func test_OpeningAndClosingParenthesis_isValid() {
+        expect("()", toBeValid: true)
     }
 
     // MARK: - Helpers
