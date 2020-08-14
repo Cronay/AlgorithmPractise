@@ -17,6 +17,11 @@ extension String {
             let newString = self.replacingOccurrences(of: "()", with: "")
             return newString.hasValidParentheses()
         }
+
+        if self.contains("{}") {
+            let newString = self.replacingOccurrences(of: "{}", with: "")
+            return newString.hasValidParentheses()
+        }
         return false
     }
 }
@@ -57,6 +62,10 @@ class ValidParenthesesTests: XCTestCase {
     func test_singleCurlyBrackets_areNotValid() {
         expect("{", toBeValid: false)
         expect("}", toBeValid: false)
+    }
+
+    func test_validCurlyBracketPair_isValid() {
+        expect("{}", toBeValid: true)
     }
 
     // MARK: - Helpers
