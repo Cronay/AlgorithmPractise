@@ -47,6 +47,13 @@ class ValidParenthesesTests: XCTestCase {
         expect("(()))", toBeValid: false)
     }
 
+    func test_longParenthesesExample_AreValid() {
+        expect("(())", toBeValid: true)
+        expect("(((())))", toBeValid: true)
+        expect("()()()", toBeValid: true)
+        expect("()((()()))", toBeValid: true)
+    }
+
     // MARK: - Helpers
 
     private func expect(_ string: String, toBeValid expectedResult: Bool) {
