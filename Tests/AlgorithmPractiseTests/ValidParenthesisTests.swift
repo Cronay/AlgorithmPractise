@@ -64,7 +64,7 @@ class ValidParenthesesTests: XCTestCase {
         expect("}", toBeValid: false)
     }
 
-    func test_validCurlyBracketPair_isValid() {
+    func test_curlyBracketPair_isValid() {
         expect("{}", toBeValid: true)
     }
 
