@@ -20,18 +20,16 @@ extension String {
 class ValidParenthesesTests: XCTestCase {
 
     func test_emptyString_isValid() {
-        let testString = ""
-
-        let result = testString.hasValidParenthesis()
-
-        XCTAssert(result)
+        expect("", toBeValid: true)
     }
 
     func test_singleOpeningParenthesis_isNotValid() {
-        let testString = "("
+        expect("(", toBeValid: false)
+    }
 
-        let result = testString.hasValidParenthesis()
+    // MARK: - Helpers
 
-        XCTAssertFalse(result)
+    private func expect(_ string: String, toBeValid expectedResult: Bool) {
+        XCTAssertEqual(string.hasValidParenthesis(), expectedResult)
     }
 }
