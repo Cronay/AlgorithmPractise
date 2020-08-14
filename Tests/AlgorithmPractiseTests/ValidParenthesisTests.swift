@@ -40,6 +40,13 @@ class ValidParenthesesTests: XCTestCase {
         expect(")(", toBeValid: false)
     }
 
+    func test_oddNumberOfParentheses_areNotValid() {
+        expect("())", toBeValid: false)
+        expect("(()", toBeValid: false)
+        expect("((())", toBeValid: false)
+        expect("(()))", toBeValid: false)
+    }
+
     // MARK: - Helpers
 
     private func expect(_ string: String, toBeValid expectedResult: Bool) {
