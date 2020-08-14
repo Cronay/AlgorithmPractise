@@ -72,6 +72,13 @@ class ValidParenthesesTests: XCTestCase {
         expect("}{", toBeValid: false)
     }
 
+    func test_longCurlyBracketsExamples_AreValid() {
+        expect("{{}}", toBeValid: true)
+        expect("{{{{}}}}", toBeValid: true)
+        expect("{}{}{}", toBeValid: true)
+        expect("{}{{{}{}}}", toBeValid: true)
+    }
+
     // MARK: - Helpers
 
     private func expect(_ string: String,
