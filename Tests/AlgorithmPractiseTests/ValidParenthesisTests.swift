@@ -32,11 +32,11 @@ class ValidParenthesesTests: XCTestCase {
         expect(")", toBeValid: false)
     }
 
-    func test_OpeningAndClosingParentheses_isValid() {
+    func test_openingAndClosingParentheses_isValid() {
         expect("()", toBeValid: true)
     }
 
-    func test_ClosingAndOpeningParentheses_isNotValid() {
+    func test_closingAndOpeningParentheses_isNotValid() {
         expect(")(", toBeValid: false)
     }
 
