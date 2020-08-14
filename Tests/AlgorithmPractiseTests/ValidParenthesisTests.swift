@@ -68,6 +68,10 @@ class ValidParenthesesTests: XCTestCase {
         expect("{}", toBeValid: true)
     }
 
+    func test_curlyBracketPairInversed_isInvalid() {
+        expect("}{", toBeValid: false)
+    }
+
     // MARK: - Helpers
 
     private func expect(_ string: String,
