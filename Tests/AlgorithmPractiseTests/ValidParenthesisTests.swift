@@ -61,7 +61,10 @@ class ValidParenthesesTests: XCTestCase {
 
     // MARK: - Helpers
 
-    private func expect(_ string: String, toBeValid expectedResult: Bool) {
-        XCTAssertEqual(string.hasValidParentheses(), expectedResult)
+    private func expect(_ string: String,
+                        toBeValid expectedResult: Bool,
+                        file: StaticString = #file,
+                        line: UInt = #line) {
+        XCTAssertEqual(string.hasValidParentheses(), expectedResult, file: file, line: line)
     }
 }
