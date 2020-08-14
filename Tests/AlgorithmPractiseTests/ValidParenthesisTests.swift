@@ -86,6 +86,12 @@ class ValidParenthesesTests: XCTestCase {
         expect("{}{{{{}{}}}", toBeValid: false)
     }
 
+    func test_mixedSymbols_areInvalid() {
+        expect("(}", toBeValid: false)
+        expect("{)", toBeValid: false)
+        expect("{(})", toBeValid: false)
+    }
+
     // MARK: - Helpers
 
     private func expect(_ string: String,
