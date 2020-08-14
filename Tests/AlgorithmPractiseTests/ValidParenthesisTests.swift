@@ -54,6 +54,11 @@ class ValidParenthesesTests: XCTestCase {
         expect("()((()()))", toBeValid: true)
     }
 
+    func test_singleCurlyBrackets_areNotValid() {
+        expect("{", toBeValid: false)
+        expect("}", toBeValid: false)
+    }
+
     // MARK: - Helpers
 
     private func expect(_ string: String, toBeValid expectedResult: Bool) {
