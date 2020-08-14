@@ -6,7 +6,7 @@
 import XCTest
 
 extension String {
-    func hasValidParenthesis() -> Bool {
+    func hasValidParentheses() -> Bool {
         if self.isEmpty {
             return true
         }
@@ -15,7 +15,7 @@ extension String {
         }
         if self.contains("()") {
             let newString = self.replacingOccurrences(of: "()", with: "")
-            return newString.hasValidParenthesis()
+            return newString.hasValidParentheses()
         }
         return false
     }
@@ -27,22 +27,22 @@ class ValidParenthesesTests: XCTestCase {
         expect("", toBeValid: true)
     }
 
-    func test_singleParenthesis_isNotValid() {
+    func test_singleParentheses_isNotValid() {
         expect("(", toBeValid: false)
         expect(")", toBeValid: false)
     }
 
-    func test_OpeningAndClosingParenthesis_isValid() {
+    func test_OpeningAndClosingParentheses_isValid() {
         expect("()", toBeValid: true)
     }
 
-    func test_ClosingAndOpeningParenthesis_isNotValid() {
+    func test_ClosingAndOpeningParentheses_isNotValid() {
         expect(")(", toBeValid: false)
     }
 
     // MARK: - Helpers
 
     private func expect(_ string: String, toBeValid expectedResult: Bool) {
-        XCTAssertEqual(string.hasValidParenthesis(), expectedResult)
+        XCTAssertEqual(string.hasValidParentheses(), expectedResult)
     }
 }
